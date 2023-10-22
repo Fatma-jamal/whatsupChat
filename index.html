@@ -197,11 +197,12 @@
         </button>
 
         <script>
-             $('#sendButton').hide();
+              $('#sendButton').hide();
             $('.card').hide();
             $(document).ready(function(){
                 $('.showChat').click(function(){
-                    $('.card').toggle();
+                    $('.card').slideToggle(300); 
+                $(this).toggleClass('active'); 
                 });
        
                 $('#sendIcon').on('click', function() {
@@ -214,7 +215,6 @@
                 });
             });
 
-            
         </script>
     </body>
 </html>
