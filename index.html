@@ -150,6 +150,10 @@
             font-size: 18px;
             cursor: pointer;
            }
+           .fa-xmark{
+            margin-left: 42%;
+            font-size: 25px;
+           }
         </style>
     </head>
     <body>
@@ -160,6 +164,7 @@
                     <h3>Fatima Jamal</h3>
                     <p>Today at 12:56</p>
                 </div>
+                <i class="fa-solid fa-xmark"></i>
                 
             </div>
             <div class="messages" id="messagesContainer">
@@ -201,8 +206,9 @@
             $('.card').hide();
             $(document).ready(function(){
                 $('.showChat').click(function(){
-                    $('.card').slideToggle(300); 
-                $(this).toggleClass('active'); 
+                    $('.card').slideDown(300); 
+                    $('.showChat').hide();
+                // $(this).toggleClass('active'); 
                 });
        
                 $('#sendIcon').on('click', function() {
@@ -213,6 +219,10 @@
                         $('#messageInput').val('');
                     }
                 });
+                $('.fa-xmark').click(function(){
+                    $('.card').slideUp(300); 
+                    $('.showChat').show();
+                })
             });
 
         </script>
