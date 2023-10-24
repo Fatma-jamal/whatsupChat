@@ -76,29 +76,46 @@
     <script>
         $('#solidHeart').hide(); 
 
-         $(document).ready(function(){
-            $('button').click(function(){
-                $('#solidHeart').show(); 
-                $('#icon').hide(); 
-                var likeNum = parseInt($('#number').text())+1;
-                $('#number').text(likeNum);
-                // animate('rotate','360');
-                $('button').addClass('animation');
+        //  $(document).ready(function(){
+        //     $('button').click(function(){
+        //         $('#solidHeart').show(); 
+        //         $('#icon').hide(); 
+        //         var likeNum = parseInt($('#number').text())+1;
+        //         $('#number').text(likeNum);
+        //         // animate('rotate','360');
+        //         $('button').addClass('animation');
             
-            });
-            $('i').click(function(){
-                $('#solidHeart').html('<i class="fa-regular fa-star"></i>'); 
-                // $('#icon').show();               // $('#number').text(30);
-                var likeNum = parseInt($('#number').text())-1;
-                $('#number').text(likeNum-1);
-                $('button').addClass('animation');
+        //     });
+        //     $('i').click(function(){
+        //         $('#solidHeart').html('<i class="fa-regular fa-star"></i>'); 
+        //         // $('#icon').show();               // $('#number').text(30);
+        //         var likeNum = parseInt($('#number').text())-1;
+        //         $('#number').text(likeNum-1);
+        //         $('button').addClass('animation');
 
               
 
-            })
+        //     })
+        // });
+
+        $(document).ready(function() {
+        $("button").click(function() {
+          var value = parseInt($('#number').text());
+
+          if (value === 29) {
+            value++;
+            $('#solidHeart').show(); 
+            $('#icon').hide(); 
+            $('button').addClass('animation');
+          } else {
+            value = 29;
+            $('#solidHeart').hide(); 
+            $('#icon').show();    
+          }
+
+          $('#number').text(value);
         });
-
-
+      });
 
     </script>
 
